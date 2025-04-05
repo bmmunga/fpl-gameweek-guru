@@ -1,6 +1,7 @@
 from .agent.fpl_agent import create_fpl_agent
 from dotenv import load_dotenv
 import os
+from Gradio_UI import GradioUI
 
 
 def main():
@@ -8,6 +9,7 @@ def main():
     HF_API_KEY = os.getenv("HF_API_KEY")
 
     agent = create_fpl_agent(HF_API_KEY)
+    GradioUI(agent).launch()
     response = agent.run(
         "Generate a Fantasy Premier League team for the current gameweek."
     )
