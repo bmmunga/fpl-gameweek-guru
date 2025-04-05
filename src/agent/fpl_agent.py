@@ -40,4 +40,5 @@ Ensure the script is executable and respects all constraints.
         prompt_templates=prompt_templates,
         tools=[search_tool, get_fpl_player_data, get_fpl_fixtures],
         max_steps=10,
+        additional_authorized_imports=["get_fpl_player_data", "get_fpl_fixtures"],
     )
